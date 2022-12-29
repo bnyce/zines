@@ -1,8 +1,8 @@
 function setup() {
-  rows = 25
+  rows = 15
   size = 500
   fill('white')
-  createCanvas(size, size)
+  createCanvas(size, size * 2)
   ch = size / rows
   fcolor = 0
   odd = rows % 2; 
