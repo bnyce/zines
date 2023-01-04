@@ -2,13 +2,15 @@ let img;
 let img2;
 
 function preload() {
-  img = loadImage('amanita_cup.png');
+  img = loadImage('1ABR.png');
   img2 = loadImage('mushy.png');
 }
 
 function setup() {
-  myWidth = 1848
-  myHeight = 2156
+  myWidth = 1800
+  w4 = myWidth/4
+  myHeight = 1757
+
   createCanvas(myWidth, myHeight)
   textSize(60);
   textAlign(CENTER, CENTER)
@@ -19,7 +21,20 @@ function setup() {
   background(color1)
 
 }
-
+function keyTyped() {
+  if (key === 's') {
+    save('image', 'png');
+  }
+}
+function i4(x=0,y=0) {
+  push()
+  translate(x,y+20)
+  image(img, 0, 0,w4,w4); 
+  image(img, w4, 0,w4,w4); 
+  image(img, w4, w4,w4,w4); 
+  image(img, 0, w4,w4,w4); 
+  pop()
+}
 function mouseClicked() {
   n = frames
 }
@@ -32,6 +47,11 @@ function draw() {
   }
   // text(n, myWidth / 2, myHeight / 2)
 
-  image(img, 0, 0,924,1078); 
-  image(img2,myWidth/2, 0,234,360); 
+  i4()
+  i4(w4*2)
+  i4(0,w4*2)
+  i4(w4*2,w4*2)
+   //   saveCanvas('image', 'png');
+
+//  image(img2,myWidth/2, 0,234,360); 
 }
